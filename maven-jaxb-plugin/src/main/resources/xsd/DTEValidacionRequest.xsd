@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.ingface.com/DTEValidacionRequest" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.ingface.com/DTEValidacionRequest">
+
+    <complexType name="ValidacionRequestType">
+    	<sequence>
+    		<element name="nit" type="string"></element>
+    		<element name="email" type="string"></element>
+    		<element name="key_dte" type="string"></element>
+    		<element name="nombreEmpresa" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="request" type="tns:ValidacionRequestType"></element>
+</schema>

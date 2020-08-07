@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.ingface.com/DTEValidacionResponse"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.ingface.com/DTEValidacionResponse">
+
+	<complexType name="ValidacionResponseType">
+		<sequence>
+			<element name="resultado" type="boolean"></element>
+			<element name="fecha" type="dateTime"></element>
+			<element name="origen" type="string"></element>
+			<element name="descripcion" type="string"></element>
+			<element name="control_emision"
+				type="tns:ControlEmisionType" maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="alertas_infile" type="boolean"></element>
+			<element name="descripcion_alertas_infile" type="string"
+				maxOccurs="unbounded" minOccurs="0">
+			</element>
+			<element name="alertas_sat" type="boolean"></element>
+			<element name="cantidad_errores" type="integer"></element>
+			<element name="descripcion_errores"
+				type="tns:DescripcionErroresType" maxOccurs="unbounded"
+				minOccurs="0">
+			</element>
+			<element name="informacion_adicional" type="string"></element>
+			<element name="uuid" type="string"></element>
+			<element name="serie" type="string"></element>
+			<element name="numero" type="string"></element>
+			<element name="xml_certificado" type="string"></element>
+			<element name="descripcion_alertas_sat" type="string" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<element name="response" type="tns:ValidacionResponseType"></element>
+
+	<complexType name="ControlEmisionType">
+		<sequence>
+			<element name="Saldo" type="string"></element>
+			<element name="Creditos" type="string"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="DescripcionErroresType">
+		<sequence>
+			<element name="resultado" type="boolean"></element>
+			<element name="fuente" type="string"></element>
+			<element name="categoria" type="string"></element>
+			<element name="numeral" type="string"></element>
+			<element name="validacion" type="string"></element>
+			<element name="mensaje_error" type="string"></element>
+		</sequence>
+	</complexType>
+</schema>
